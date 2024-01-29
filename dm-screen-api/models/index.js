@@ -19,6 +19,11 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.users = require("./user.model.js")(sequelize, Sequelize);
+db.users = require("./user.js")(sequelize, Sequelize);
+db.games = require("./game.js")(sequelize, Sequelize);
+db.characters = require("./character.js")(sequelize, Sequelize);
+db.items = require("./item.js")(sequelize, Sequelize);
+db.stores = require("./store.js")(sequelize, Sequelize);
+db.rules = require("./rule.js")(sequelize, Sequelize);
 
 module.exports = db;

@@ -1,3 +1,5 @@
+const Game = require("./game").Game
+
 module.exports = (sequelize, Sequelize) => {
     const User = sequelize.define("user", {
       username: {
@@ -8,5 +10,8 @@ module.exports = (sequelize, Sequelize) => {
       }
     });
   
+    User.associate = (models) => {
+      User.hasMany(Game);
+    };
     return User;
   };
